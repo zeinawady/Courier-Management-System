@@ -1,0 +1,24 @@
+C:\Users\Basmala\source\repos\SWProject\SWProject\bin\Debug\SWProject.exe.config
+C:\Users\Basmala\source\repos\SWProject\SWProject\bin\Debug\SWProject.exe
+C:\Users\Basmala\source\repos\SWProject\SWProject\bin\Debug\SWProject.pdb
+C:\Users\Basmala\source\repos\SWProject\SWProject\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Basmala\source\repos\SWProject\SWProject\obj\Debug\SWProject.csproj.AssemblyReference.cache
+C:\Users\Basmala\source\repos\SWProject\SWProject\obj\Debug\SWProject.Admin.resources
+C:\Users\Basmala\source\repos\SWProject\SWProject\obj\Debug\SWProject.Properties.Resources.resources
+C:\Users\Basmala\source\repos\SWProject\SWProject\obj\Debug\SWProject.csproj.GenerateResource.cache
+C:\Users\Basmala\source\repos\SWProject\SWProject\obj\Debug\SWProject.csproj.CoreCompileInputs.cache
+C:\Users\Basmala\source\repos\SWProject\SWProject\obj\Debug\SWProject.csproj.CopyComplete
+C:\Users\Basmala\source\repos\SWProject\SWProject\obj\Debug\SWProject.exe
+C:\Users\Basmala\source\repos\SWProject\SWProject\obj\Debug\SWProject.pdb
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\bin\Debug\SWProject.exe.config
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\bin\Debug\SWProject.exe
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\bin\Debug\SWProject.pdb
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\bin\Debug\Oracle.DataAccess.dll
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.csproj.AssemblyReference.cache
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.Admin.resources
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.Properties.Resources.resources
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.csproj.GenerateResource.cache
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.csproj.CoreCompileInputs.cache
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.csproj.CopyComplete
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.exe
+D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.pdb
