@@ -195,5 +195,12 @@ namespace SWProject
                 MessageBox.Show("Courier is Deleted Successfully!!");
             }
         }
+      
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MainForm main = new MainForm();
+            main.Show();
+            this.Hide();
+        }
     }
 }

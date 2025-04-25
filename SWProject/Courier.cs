@@ -69,5 +69,12 @@ namespace SWProject
         {
             status.Items.AddRange("ongoing", "shipped", "delivered", "cancelled");
         }
+
+        private void prevBtn_Click(object sender, EventArgs e)
+        {
+            MainForm main = new MainForm();
+            main.Show();
+            this.Hide();
+        }
     }
 }

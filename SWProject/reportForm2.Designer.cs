@@ -35,6 +35,7 @@ namespace SWProject
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.prevBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -42,9 +43,9 @@ namespace SWProject
             this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(12, 40);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(12, 43);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1122, 595);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1177, 640);
             this.crystalReportViewer1.TabIndex = 2;
             // 
             // textBox1
@@ -90,11 +91,22 @@ namespace SWProject
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // prevBtn
+            // 
+            this.prevBtn.Location = new System.Drawing.Point(12, 4);
+            this.prevBtn.Name = "prevBtn";
+            this.prevBtn.Size = new System.Drawing.Size(33, 30);
+            this.prevBtn.TabIndex = 21;
+            this.prevBtn.Text = "<";
+            this.prevBtn.UseVisualStyleBackColor = true;
+            this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
+            // 
             // reportForm2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 660);
+            this.ClientSize = new System.Drawing.Size(1201, 698);
+            this.Controls.Add(this.prevBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -117,5 +129,6 @@ namespace SWProject
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button prevBtn;
     }
 }

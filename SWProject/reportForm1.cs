@@ -24,5 +24,12 @@ namespace SWProject
             cr = new CrystalReport1();
             crystalReportViewer1.ReportSource = cr;
         }
+
+        private void prevBtn_Click(object sender, EventArgs e)
+        {
+            MainForm main = new MainForm();
+            main.Show();
+            this.Hide();
+        }
     }
 }

@@ -51,7 +51,7 @@ namespace SWProject
             // adminBtn
             // 
             this.adminBtn.Location = new System.Drawing.Point(321, 159);
-            this.adminBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adminBtn.Margin = new System.Windows.Forms.Padding(4);
             this.adminBtn.Name = "adminBtn";
             this.adminBtn.Size = new System.Drawing.Size(151, 49);
             this.adminBtn.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace SWProject
             // courierBtn
             // 
             this.courierBtn.Location = new System.Drawing.Point(321, 249);
-            this.courierBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.courierBtn.Margin = new System.Windows.Forms.Padding(4);
             this.courierBtn.Name = "courierBtn";
             this.courierBtn.Size = new System.Drawing.Size(151, 49);
             this.courierBtn.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace SWProject
             // customerBtn
             // 
             this.customerBtn.Location = new System.Drawing.Point(321, 332);
-            this.customerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customerBtn.Margin = new System.Windows.Forms.Padding(4);
             this.customerBtn.Name = "customerBtn";
             this.customerBtn.Size = new System.Drawing.Size(151, 49);
             this.customerBtn.TabIndex = 3;
@@ -114,9 +114,10 @@ namespace SWProject
             this.Controls.Add(this.courierBtn);
             this.Controls.Add(this.adminBtn);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

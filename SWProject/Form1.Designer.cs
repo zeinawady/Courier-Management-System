@@ -42,13 +42,14 @@ namespace SWProject
             this.assignOrderBtn = new System.Windows.Forms.Button();
             this.emptyOrders = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.prevBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbCourierID
             // 
             this.cmbCourierID.FormattingEnabled = true;
             this.cmbCourierID.Location = new System.Drawing.Point(316, 66);
-            this.cmbCourierID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCourierID.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCourierID.Name = "cmbCourierID";
             this.cmbCourierID.Size = new System.Drawing.Size(264, 24);
             this.cmbCourierID.TabIndex = 0;
@@ -68,7 +69,7 @@ namespace SWProject
             // addCourierBtn
             // 
             this.addCourierBtn.Location = new System.Drawing.Point(721, 153);
-            this.addCourierBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addCourierBtn.Margin = new System.Windows.Forms.Padding(4);
             this.addCourierBtn.Name = "addCourierBtn";
             this.addCourierBtn.Size = new System.Drawing.Size(136, 52);
             this.addCourierBtn.TabIndex = 2;
@@ -79,7 +80,7 @@ namespace SWProject
             // deleteCourierBtn
             // 
             this.deleteCourierBtn.Location = new System.Drawing.Point(721, 241);
-            this.deleteCourierBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.deleteCourierBtn.Margin = new System.Windows.Forms.Padding(4);
             this.deleteCourierBtn.Name = "deleteCourierBtn";
             this.deleteCourierBtn.Size = new System.Drawing.Size(136, 53);
             this.deleteCourierBtn.TabIndex = 3;
@@ -90,7 +91,7 @@ namespace SWProject
             // courierName
             // 
             this.courierName.Location = new System.Drawing.Point(316, 116);
-            this.courierName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.courierName.Margin = new System.Windows.Forms.Padding(4);
             this.courierName.Name = "courierName";
             this.courierName.Size = new System.Drawing.Size(263, 22);
             this.courierName.TabIndex = 4;
@@ -108,7 +109,7 @@ namespace SWProject
             // courierPhone
             // 
             this.courierPhone.Location = new System.Drawing.Point(317, 166);
-            this.courierPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.courierPhone.Margin = new System.Windows.Forms.Padding(4);
             this.courierPhone.Name = "courierPhone";
             this.courierPhone.Size = new System.Drawing.Size(262, 22);
             this.courierPhone.TabIndex = 6;
@@ -127,7 +128,7 @@ namespace SWProject
             // 
             this.assignedOrders.FormattingEnabled = true;
             this.assignedOrders.Location = new System.Drawing.Point(316, 217);
-            this.assignedOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.assignedOrders.Margin = new System.Windows.Forms.Padding(4);
             this.assignedOrders.Name = "assignedOrders";
             this.assignedOrders.Size = new System.Drawing.Size(263, 24);
             this.assignedOrders.TabIndex = 8;
@@ -146,7 +147,7 @@ namespace SWProject
             // assignOrderBtn
             // 
             this.assignOrderBtn.Location = new System.Drawing.Point(721, 66);
-            this.assignOrderBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.assignOrderBtn.Margin = new System.Windows.Forms.Padding(4);
             this.assignOrderBtn.Name = "assignOrderBtn";
             this.assignOrderBtn.Size = new System.Drawing.Size(136, 52);
             this.assignOrderBtn.TabIndex = 10;
@@ -158,7 +159,7 @@ namespace SWProject
             // 
             this.emptyOrders.FormattingEnabled = true;
             this.emptyOrders.Location = new System.Drawing.Point(317, 270);
-            this.emptyOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emptyOrders.Margin = new System.Windows.Forms.Padding(4);
             this.emptyOrders.Name = "emptyOrders";
             this.emptyOrders.Size = new System.Drawing.Size(262, 24);
             this.emptyOrders.TabIndex = 11;
@@ -174,11 +175,22 @@ namespace SWProject
             this.label5.TabIndex = 12;
             this.label5.Text = "Non Assigned Orders";
             // 
+            // prevBtn
+            // 
+            this.prevBtn.Location = new System.Drawing.Point(28, 12);
+            this.prevBtn.Name = "prevBtn";
+            this.prevBtn.Size = new System.Drawing.Size(33, 30);
+            this.prevBtn.TabIndex = 13;
+            this.prevBtn.Text = "<";
+            this.prevBtn.UseVisualStyleBackColor = true;
+            this.prevBtn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(996, 554);
+            this.Controls.Add(this.prevBtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.emptyOrders);
             this.Controls.Add(this.assignOrderBtn);
@@ -192,7 +204,7 @@ namespace SWProject
             this.Controls.Add(this.addCourierBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbCourierID);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Admin";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Admin_FormClosing);
@@ -217,6 +229,7 @@ namespace SWProject
         private System.Windows.Forms.Button assignOrderBtn;
         private System.Windows.Forms.ComboBox emptyOrders;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button prevBtn;
     }
 }
 

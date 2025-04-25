@@ -58,5 +58,10 @@ namespace SWProject
             from2.Show();
             this.Hide();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
