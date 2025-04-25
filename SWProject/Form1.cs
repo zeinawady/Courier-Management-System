@@ -129,18 +129,18 @@ namespace SWProject
             if (cmbCourierID.Items.Contains(newId))
             {
                 MessageBox.Show("Enter Unique Id");
-                cmbCourierID.Text = string.Empty; // Clear the input field
+                cmbCourierID.Text = string.Empty;
                 return;
             }
 
             try
             {
-               
                 int r = cmd.ExecuteNonQuery();
 
                 if (r > 0)
                 {
                     cmbCourierID.Items.Add(newId);
+
                     MessageBox.Show("Courier is Added Successfully!!");
                 }
                 else
@@ -160,7 +160,7 @@ namespace SWProject
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "update Orders set status='placed' , courierID=:courierId where orderID=:orderId";
+            cmd.CommandText = "update Orders set status='ongoing' ,courierID=:courierId where orderID=:orderId";
             cmd.Parameters.Add("courierId", cmbCourierID.SelectedItem.ToString());
             cmd.Parameters.Add("orderId", emptyOrders.SelectedItem.ToString());
 
@@ -169,9 +169,8 @@ namespace SWProject
             {
                 assignedOrders.Items.Add(emptyOrders.SelectedItem.ToString());
                 emptyOrders.Items.RemoveAt(emptyOrders.SelectedIndex);
-                emptyOrders.Text = " ";
+                emptyOrders.Text = "";
                 MessageBox.Show("Order is Assigned Successfully!!");
-
             }
 
         }
@@ -201,9 +200,7 @@ namespace SWProject
                 courierName.Text = "";
                 courierPhone.Text = "";
                 assignedOrders.Items.Clear();
-
-                MessageBox.Show("Courier is Deleted Successfully!!");
-                
+                MessageBox.Show("Courier is Deleted Successfully!!");                
             }
 
 

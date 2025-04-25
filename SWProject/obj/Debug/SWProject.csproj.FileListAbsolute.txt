@@ -22,3 +22,18 @@ D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProj
 D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.csproj.CopyComplete
 D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.exe
 D:\All projects\Temporary Folders\SWProject\SWProject\SWProject\obj\Debug\SWProject.pdb
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\bin\Debug\SWProject.exe.config
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\bin\Debug\SWProject.exe
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\bin\Debug\SWProject.pdb
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.csproj.AssemblyReference.cache
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.Admin.resources
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.Properties.Resources.resources
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.csproj.GenerateResource.cache
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.csproj.CoreCompileInputs.cache
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.csproj.CopyComplete
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.exe
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.pdb
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.MainForm.resources
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.Courier.resources
+C:\Users\Basmala\source\repos\Courier-Management-System\SWProject\obj\Debug\SWProject.Customer.resources
