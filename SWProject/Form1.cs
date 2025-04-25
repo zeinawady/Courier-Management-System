@@ -13,7 +13,6 @@ namespace SWProject
 {
     public partial class Admin : Form
     {
- 
         string ordb = "Data source=orcl;User Id=scott; Password=tiger;";
         OracleConnection conn;
         public Admin()
@@ -46,7 +45,6 @@ namespace SWProject
           
                 while (dr.Read())
                 {
-                 
                      cmbCourierID.Items.Add(dr[0].ToString());
                 }
                 dr.Close();
@@ -132,7 +130,6 @@ namespace SWProject
                 cmbCourierID.Text = string.Empty;
                 return;
             }
-
             try
             {
                 int r = cmd.ExecuteNonQuery();

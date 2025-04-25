@@ -40,7 +40,7 @@ namespace SWProject
             adapter.Fill(ds);
             if (ds.Tables[0].Rows.Count == 0)
             {
-                MessageBox.Show("No orders found for this Courier ID.");
+                MessageBox.Show("No orders found for you!!");
                 ordersTable.DataSource = null;
                 return;
             }
