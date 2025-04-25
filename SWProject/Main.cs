@@ -44,5 +44,19 @@ namespace SWProject
             customerForm.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            reportForm1 from1 = new reportForm1();
+            from1.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            reportForm2 from2 = new reportForm2();
+            from2.Show();
+            this.Hide();
+        }
     }
 }
