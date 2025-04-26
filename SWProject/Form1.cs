@@ -132,7 +132,7 @@ namespace SWProject
                 if (r > 0)
                 {
                     cmbCourierID.Items.Add(newId);
-
+                    assignedOrders.Items.Clear();
                     MessageBox.Show("Courier is Added Successfully!!");
                 }
                 else
@@ -149,6 +149,21 @@ namespace SWProject
 
         private void assignOrderBtn_Click(object sender, EventArgs e)
         {
+            OracleCommand checkCmd = new OracleCommand();
+            checkCmd.Connection = conn;
+            checkCmd.CommandText = "select count(*) from Couriers where userID = :id";
+            checkCmd.CommandType = CommandType.Text;
+            checkCmd.Parameters.Add("id", cmbCourierID.SelectedItem.ToString());
+
+            int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+            if (count == 0)
+            {
+                cmbCourierID.SelectedItem = -1;
+                MessageBox.Show("INVALID ID!!\nPlease Enter a Valid ID.");
+                return;
+            }
+
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
@@ -179,6 +194,29 @@ namespace SWProject
 
         private void deleteCourierBtn_Click(object sender, EventArgs e)
         {
+            OracleCommand checkCmd = new OracleCommand();
+            checkCmd.Connection = conn;
+            checkCmd.CommandText = "select count(*) from Couriers where userID = :id";
+            checkCmd.CommandType = CommandType.Text;
+            try
+            {
+                checkCmd.Parameters.Add("id", cmbCourierID.Text);
+            }
+            catch
+            {
+                checkCmd.Parameters.Add("id", cmbCourierID.SelectedItem.ToString());
+            }
+
+            int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+            if (count == 0)
+            {
+                cmbCourierID.Text = "";
+
+                MessageBox.Show("INVALID ID!!\nPlease Enter a Valid ID.");
+                return;
+            }
+
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
@@ -187,8 +225,16 @@ namespace SWProject
             int r = cmd.ExecuteNonQuery();
             if (r != -1)
             {
-                cmbCourierID.Items.RemoveAt(cmbCourierID.SelectedIndex);
-                cmbCourierID.Text = "";
+                try
+                {
+                    cmbCourierID.Items.RemoveAt(cmbCourierID.SelectedIndex);
+                    cmbCourierID.SelectedItem = -1;
+                }
+                catch
+                {
+                    int index = cmbCourierID.FindStringExact(cmbCourierID.Text);
+                    cmbCourierID.Items.RemoveAt(cmbCourierID.SelectedIndex = index);
+                }
                 courierName.Text = "";
                 courierPhone.Text = "";
                 assignedOrders.Items.Clear();
