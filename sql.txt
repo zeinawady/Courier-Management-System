@@ -23,7 +23,7 @@ CREATE TABLE Orders (
   orderWeight NUMBER(4,2) NOT NULL,
   deliveryAddress VARCHAR2(150) NOT NULL,
   
-  status VARCHAR2(20) DEFAULT 'Placed'
+  status VARCHAR2(20) DEFAULT 'placed'
     CHECK (LOWER(status) IN ('placed', 'ongoing', 'shipped', 'delivered', 'cancelled')),
   orderDate DATE DEFAULT SYSDATE,
   deliveredDate DATE,

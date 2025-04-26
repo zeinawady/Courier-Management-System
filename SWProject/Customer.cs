@@ -23,6 +23,27 @@ namespace SWProject
 
         private void button3_Click(object sender, EventArgs e)
         {
+            OracleCommand checkCmd = new OracleCommand();
+            checkCmd.Connection = conn;
+            checkCmd.CommandText = "select count(*) from Customers where userID = :id";
+            checkCmd.CommandType = CommandType.Text;
+            checkCmd.Parameters.Add("id", customerID.Text);
+
+            int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+            if (count == 0)
+            {
+                customerID.Text = "";
+                customerID.Focus();
+                MessageBox.Show("INVALID ID!!\nPlease Enter a Valid ID.");
+                return;
+            }
+            if (orders.SelectedItem == null)
+            {
+                MessageBox.Show("Please Select an Order from Your Orders List.");
+                return;
+            }
+
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
@@ -35,10 +56,7 @@ namespace SWProject
                 if (r != -1)
                 {
                     orders.Items.RemoveAt(orders.SelectedIndex);
-                    orderWeight.Text = "";
-                    deliveryAddress.Text = "";
-                    orderDate.Text = "";
-                    orderStatus.Text = "";
+                    clearData();
                     MessageBox.Show("Your Order is Deleted Successfully!!");
                 }
             }
@@ -51,8 +69,35 @@ namespace SWProject
 
         }
 
+        private void clearData()
+        {
+            orderWeight.Text = "";
+            deliveryAddress.Text = "";
+            orderDate.Text = "";
+            deliveredDate.Text = "";
+            orderStatus.Text = "";
+        }
+
         private void showBtn_Click(object sender, EventArgs e)
         {
+            OracleCommand checkCmd = new OracleCommand();
+            checkCmd.Connection = conn;
+            checkCmd.CommandText = "select count(*) from Customers where userID = :id";
+            checkCmd.CommandType = CommandType.Text;
+            checkCmd.Parameters.Add("id", customerID.Text);
+
+            int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+            if (count == 0)
+            {
+                clearData();
+                orders.Items.Clear();
+                orders.Text = "";
+                customerID.Text = "";
+                MessageBox.Show("INVALID ID!!\nPlease Enter a Valid ID.");
+                return;
+            }
+
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
             cmd.CommandText = "GetOrders"; 
@@ -60,14 +105,10 @@ namespace SWProject
             cmd.Parameters.Add("customerID", customerID.Text);
             cmd.Parameters.Add("orders", OracleDbType.RefCursor, ParameterDirection.Output);
             OracleDataReader dr = cmd.ExecuteReader();
-            
+
+            clearData();
             orders.Items.Clear();
-            orders.Text = "";
-            orderWeight.Text = "";
-            deliveryAddress.Text = "";
-            orderDate.Text = "";
-            deliveredDate.Text = "";
-            orderStatus.Text = "";
+            //orders.Text = "";
 
             while (dr.Read())
             {
@@ -112,6 +153,27 @@ namespace SWProject
 
         private void addBtn_Click(object sender, EventArgs e)
         {
+            OracleCommand checkCmd = new OracleCommand();
+            checkCmd.Connection = conn;
+            checkCmd.CommandText = "select count(*) from Customers where userID = :id";
+            checkCmd.CommandType = CommandType.Text;
+            checkCmd.Parameters.Add("id", customerID.Text);
+
+            int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+            if (count == 0)
+            {
+                customerID.Text = "";
+                customerID.Focus();
+                MessageBox.Show("INVALID ID!!\nPlease Enter a Valid ID.");
+                return;
+            }
+            if (orders.SelectedItem == null)
+            {
+                MessageBox.Show("Please Select an Order from Your Orders List.");
+                return;
+            }
+
             OracleCommand cmd = new OracleCommand();
             int nextID;
             cmd.Connection = conn;
@@ -164,6 +226,27 @@ namespace SWProject
 
         private void editBtn_Click(object sender, EventArgs e)
         {
+            OracleCommand checkCmd = new OracleCommand();
+            checkCmd.Connection = conn;
+            checkCmd.CommandText = "select count(*) from Customers where userID = :id";
+            checkCmd.CommandType = CommandType.Text;
+            checkCmd.Parameters.Add("id", customerID.Text);
+
+            int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+            if (count == 0)
+            {
+                customerID.Text = "";
+                MessageBox.Show("INVALID ID!!\nPlease Enter a Valid ID.");
+                customerID.Focus();
+                return;
+            }
+            if (orders.SelectedItem == null)
+            {
+                MessageBox.Show("Please Select an Order from Your Orders List.");
+                return;
+            }
+
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
@@ -195,6 +278,11 @@ namespace SWProject
             MainForm main = new MainForm();
             main.Show();
             this.Hide();
+        }
+
+        private void Customer_Shown(object sender, EventArgs e)
+        {
+            customerID.Focus();
         }
     }
 }

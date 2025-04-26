@@ -25,7 +25,7 @@ namespace SWProject
             string ordb = "User Id=scott;Password=tiger;Data Source=orcl";
             string cmd = @"select orderID, deliveryAddress, orderWeight, status
                            from orders
-                           where courierID =:courierID";
+                           where courierID =:courierID and status != 'placed'";
             adapter = new OracleDataAdapter(cmd, ordb);
             string id = courierID.Text;
             if (!int.TryParse(id, out int courierId))
