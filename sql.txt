@@ -1,0 +1,77 @@
+DROP TABLE Orders CASCADE CONSTRAINTS;
+
+DROP TABLE Users CASCADE CONSTRAINTS;
+
+Create Table Users (
+  userID NUMBER(3) PRIMARY KEY,
+  fullname VARCHAR2(20) NOT NULL,
+  phoneNumber VARCHAR2(13) NOT NULL,
+  userRole VARCHAR2(10) CHECK (Lower(userRole) IN ('customer', 'courier')) NOT NULL
+);
+
+CREATE TABLE Orders (
+  orderID NUMBER(6) PRIMARY KEY,
+  customerID NUMBER(3) NOT NULL,
+  courierID NUMBER(3),
+  
+  orderWeight NUMBER(4,2) NOT NULL,
+  deliveryAddress VARCHAR2(150) NOT NULL,
+  
+  status VARCHAR2(20) DEFAULT 'Placed'
+    CHECK (LOWER(status) IN ('placed', 'ongoing', 'shipped', 'delivered', 'cancelled')),
+  orderDate DATE DEFAULT SYSDATE,
+  deliveredDate DATE,
+  
+  FOREIGN KEY (customerID) REFERENCES Users(userID) ON DELETE CASCADE,
+  FOREIGN KEY (courierID) REFERENCES Users(userID)
+);
+
+-- Customers
+INSERT INTO Users
+VALUES (101, 'Ahmed Gamal', '01011111111', 'Customer');
+
+INSERT INTO Users
+VALUES (102, 'Sara Mostafa', '01022222222', 'Customer');
+
+-- Couriers
+INSERT INTO Users
+VALUES (201, 'Kareem Hany', '01033333333', 'Courier');
+
+INSERT INTO Users
+VALUES (202, 'Yasmin Fathy', '01044444444', 'Courier');
+
+-- Order placed by Ahmed, not yet assigned to a courier
+INSERT INTO Orders VALUES (
+  1001, 101, NULL, 5.25, '10 El Tahrir Street, Dokki, Giza', 'Placed', SYSDATE,NULL
+);
+
+-- Order placed by Sara, assigned to Kareem, in 'ongoing' state
+INSERT INTO Orders VALUES (
+  1002, 102, 201, 3.50, '25 Mostafa Mahmoud St, Mohandessin', 'Ongoing', SYSDATE, NULL
+);
+
+-- Order placed by Ahmed, delivered by Yasmin
+INSERT INTO Orders VALUES (
+  1003, 101, 202, 2.75, '15 Hassan El Maamoun, Nasr City', 'Delivered', TO_DATE('2025-04-20', 'YYYY-MM-DD'), TO_DATE('2025-04-22', 'YYYY-MM-DD')
+);
+
+commit;
+
+create or replace procedure GetOrders
+(custID IN Number, custOrders out sys_refcursor)
+as
+begin
+open custOrders for
+select orderID
+from orders
+where customerID = custID;
+end;
+
+create or replace procedure GetMaxID
+(ordID out Number)
+as
+begin
+select Max(orderID)
+into ordID
+from orders;
+end;
