@@ -29,7 +29,7 @@ namespace SWProject
             cmd.CommandText = "delete from orders where orderID = :ordID";
             cmd.Parameters.Add("ordID", orders.SelectedItem);
 
-            if (orderStatus.Text == "Placed")
+            if (orderStatus.Text == "placed")
             {
                 int r = cmd.ExecuteNonQuery();
                 if (r != -1)
@@ -133,7 +133,7 @@ namespace SWProject
             cmd2.Connection = conn;
             cmd2.CommandType = CommandType.Text;
             cmd2.CommandText = @"insert into orders 
-                             values (:ordID, :custID, NULL, :weight, :address, 'Placed', SYSDATE, Null
+                             values (:ordID, :custID, NULL, :weight, :address, 'placed', SYSDATE, Null
                               )";
             if (string.IsNullOrWhiteSpace(customerID.Text) ||
                 string.IsNullOrWhiteSpace(orderWeight.Text) ||
@@ -156,7 +156,7 @@ namespace SWProject
                 orders.Text = nextID.ToString();
                 orderDate.Text = DateTime.Now.ToString();
                 deliveredDate.Text = "";
-                orderStatus.Text = "Placed";
+                orderStatus.Text = "placed";
 
                 MessageBox.Show("Your Order is Placed Successfully!!");
             }
@@ -173,7 +173,7 @@ namespace SWProject
             cmd.Parameters.Add("weight", orderWeight.Text);
             cmd.Parameters.Add("address", deliveryAddress.Text);
             cmd.Parameters.Add("ordID", orders.SelectedItem.ToString());
-            if(orderStatus.Text == "Placed")
+            if(orderStatus.Text == "placed")
             {
                 int r = cmd.ExecuteNonQuery();
                 if(r != -1 )

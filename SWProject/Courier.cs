@@ -67,7 +67,7 @@ namespace SWProject
 
         private void Courier_Load(object sender, EventArgs e)
         {
-            status.Items.AddRange("Ongoing", "Shipped", "Delivered", "Cancelled");
+            status.Items.AddRange("ongoing", "shipped", "delivered", "cancelled");
         }
     }
 }

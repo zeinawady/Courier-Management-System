@@ -1,12 +1,18 @@
 DROP TABLE Orders CASCADE CONSTRAINTS;
 
-DROP TABLE Users CASCADE CONSTRAINTS;
+DROP TABLE Customers CASCADE CONSTRAINTS;
+DROP TABLE Couriers CASCADE CONSTRAINTS;
 
-Create Table Users (
+Create Table Customers (
   userID NUMBER(3) PRIMARY KEY,
   fullname VARCHAR2(20) NOT NULL,
-  phoneNumber VARCHAR2(13) NOT NULL,
-  userRole VARCHAR2(10) CHECK (Lower(userRole) IN ('customer', 'courier')) NOT NULL
+  phoneNumber VARCHAR2(13) NOT NULL
+);
+
+Create Table Couriers (
+  userID NUMBER(3) PRIMARY KEY,
+  fullname VARCHAR2(20) NOT NULL,
+  phoneNumber VARCHAR2(13) NOT NULL
 );
 
 CREATE TABLE Orders (
@@ -22,38 +28,42 @@ CREATE TABLE Orders (
   orderDate DATE DEFAULT SYSDATE,
   deliveredDate DATE,
   
-  FOREIGN KEY (customerID) REFERENCES Users(userID) ON DELETE CASCADE,
-  FOREIGN KEY (courierID) REFERENCES Users(userID)
+  FOREIGN KEY (customerID) REFERENCES Customers(userID) ON DELETE CASCADE,
+  FOREIGN KEY (courierID) REFERENCES Couriers(userID)
 );
 
--- Customers
-INSERT INTO Users
-VALUES (101, 'Ahmed Gamal', '01011111111', 'Customer');
+INSERT INTO Customers VALUES (101, 'Ahmed Ali', '+201234567890');
+INSERT INTO Customers VALUES (102, 'Sara Youssef', '+201112223334');
+INSERT INTO Customers VALUES (103, 'Omar Hassan', '+201556677889');
+INSERT INTO Customers VALUES (104, 'Laila Samir', '+201334455667');
+INSERT INTO Customers VALUES (105, 'Youssef Tamer', '+201998877441');
+INSERT INTO Customers VALUES (106, 'Dina Mostafa', '+201778899001');
+INSERT INTO Customers VALUES (107, 'Hassan Ibrahim', '+201600122334');
+INSERT INTO Customers VALUES (108, 'Nadine Wael', '+201222333444');
 
-INSERT INTO Users
-VALUES (102, 'Sara Mostafa', '01022222222', 'Customer');
 
--- Couriers
-INSERT INTO Users
-VALUES (201, 'Kareem Hany', '01033333333', 'Courier');
+INSERT INTO Couriers VALUES (201, 'Mona Sameer', '+201998877665');
+INSERT INTO Couriers VALUES (202, 'Khaled Gamal', '+201223344556');
+INSERT INTO Couriers VALUES (203, 'Nour Adel', '+201667788990');
+INSERT INTO Couriers VALUES (204, 'Mahmoud Adel', '+201665544332');
+INSERT INTO Couriers VALUES (205, 'Aya Fathy', '+201300099887');
+INSERT INTO Couriers VALUES (206, 'Tarek Younes', '+201556600771');
+INSERT INTO Couriers VALUES (207, 'Lina Magdy', '+201144882233');
 
-INSERT INTO Users
-VALUES (202, 'Yasmin Fathy', '01044444444', 'Courier');
 
--- Order placed by Ahmed, not yet assigned to a courier
-INSERT INTO Orders VALUES (
-  1001, 101, NULL, 5.25, '10 El Tahrir Street, Dokki, Giza', 'Placed', SYSDATE,NULL
-);
 
--- Order placed by Sara, assigned to Kareem, in 'ongoing' state
-INSERT INTO Orders VALUES (
-  1002, 102, 201, 3.50, '25 Mostafa Mahmoud St, Mohandessin', 'Ongoing', SYSDATE, NULL
-);
-
--- Order placed by Ahmed, delivered by Yasmin
-INSERT INTO Orders VALUES (
-  1003, 101, 202, 2.75, '15 Hassan El Maamoun, Nasr City', 'Delivered', TO_DATE('2025-04-20', 'YYYY-MM-DD'), TO_DATE('2025-04-22', 'YYYY-MM-DD')
-);
+INSERT INTO Orders VALUES (1001, 101, 201, 3.50, 'Nasr City, Cairo', 'placed', SYSDATE, NULL);
+INSERT INTO Orders VALUES (1002, 102, 202, 2.25, 'Zamalek, Cairo', 'ongoing', SYSDATE, NULL);
+INSERT INTO Orders VALUES (1003, 103, 203, 1.75, '6th October, Giza', 'shipped', SYSDATE, NULL);
+INSERT INTO Orders VALUES (1004, 101, NULL, 2.00, 'Maadi, Cairo', 'placed', SYSDATE, NULL);  -- unassigned courier
+INSERT INTO Orders VALUES (1005, 104, 204, 2.75, 'Dokki, Giza', 'delivered', SYSDATE - 4, SYSDATE - 1);
+INSERT INTO Orders VALUES (1006, 105, 205, 3.10, 'Heliopolis, Cairo', 'cancelled', SYSDATE - 2, NULL);
+INSERT INTO Orders VALUES (1007, 106, 206, 4.50, 'Rehab City, Cairo', 'shipped', SYSDATE - 1, NULL);
+INSERT INTO Orders VALUES (1008, 107, NULL, 1.25, 'Sheikh Zayed, Giza', 'placed', SYSDATE, NULL);
+INSERT INTO Orders VALUES (1009, 108, 207, 2.80, 'New Cairo, Cairo', 'delivered', SYSDATE - 5, SYSDATE - 2);
+INSERT INTO Orders VALUES (1010, 101, 204, 3.90, 'Ain Shams, Cairo', 'ongoing', SYSDATE - 1, NULL);
+INSERT INTO Orders VALUES (1011, 102, 205, 2.10, 'Mokattam, Cairo', 'placed', SYSDATE, NULL);
+INSERT INTO Orders VALUES (1012, 103, NULL, 1.60, 'October Gardens, Giza', 'placed', SYSDATE, NULL);
 
 commit;
 

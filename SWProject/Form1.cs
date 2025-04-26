@@ -35,10 +35,9 @@ namespace SWProject
             conn = new OracleConnection(ordb);
             conn.Open();
 
-
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
-            cmd.CommandText = "SELECT userID FROM Users where lower(userRole) ='courier'"; // 
+            cmd.CommandText = "SELECT userID FROM Couriers";
             cmd.CommandType = CommandType.Text;
 
             OracleDataReader dr = cmd.ExecuteReader();
@@ -49,10 +48,9 @@ namespace SWProject
                 }
                 dr.Close();
       
-
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = conn;
-            cmd2.CommandText = "SELECT orderID FROM Orders WHERE courierID IS NULL"; // 
+            cmd2.CommandText = "SELECT orderID FROM Orders WHERE courierID IS NULL";
             cmd2.CommandType = CommandType.Text;
 
             OracleDataReader dr2 = cmd2.ExecuteReader();
@@ -69,16 +67,14 @@ namespace SWProject
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select fullname , phoneNumber from users where userID =:ID";
+            cmd.CommandText = "select fullname , phoneNumber from couriers where userID =:ID";
             cmd.Parameters.Add("id", cmbCourierID.SelectedItem.ToString());
             OracleDataReader dr = cmd.ExecuteReader();
 
             while (dr.Read())
             {
-
                 courierName.Text = dr[0].ToString();
                 courierPhone.Text = dr[1].ToString();
-
             }
             dr.Close();
 
@@ -92,7 +88,6 @@ namespace SWProject
             while (dr2.Read())
             {
                 assignedOrders.Items.Add(dr2[0]);
-
             }
             dr2.Close();
 
@@ -116,7 +111,7 @@ namespace SWProject
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into users values(:courierId , :fullName , :phoneNumber ,'courier')";
+            cmd.CommandText = "insert into couriers values(:courierId , :fullName , :phoneNumber)";
 
             cmd.Parameters.Add("courierId", cmbCourierID.Text);
             cmd.Parameters.Add("fullName", courierName.Text);
@@ -187,7 +182,7 @@ namespace SWProject
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete from users where userID=:id";
+            cmd.CommandText = "delete from couriers where userID=:id";
             cmd.Parameters.Add("id", cmbCourierID.Text);
             int r = cmd.ExecuteNonQuery();
             if (r != -1)
