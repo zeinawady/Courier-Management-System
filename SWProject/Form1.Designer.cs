@@ -123,6 +123,7 @@ namespace SWProject
             this.assignedOrders.Location = new System.Drawing.Point(237, 176);
             this.assignedOrders.Name = "assignedOrders";
             this.assignedOrders.Size = new System.Drawing.Size(198, 21);
+            this.assignedOrders.Sorted = true;
             this.assignedOrders.TabIndex = 8;
             this.assignedOrders.SelectedIndexChanged += new System.EventHandler(this.assignedOrders_SelectedIndexChanged);
             // 
@@ -147,11 +148,13 @@ namespace SWProject
             // 
             // emptyOrders
             // 
+            this.emptyOrders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.emptyOrders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.emptyOrders.FormattingEnabled = true;
             this.emptyOrders.Location = new System.Drawing.Point(238, 219);
             this.emptyOrders.Name = "emptyOrders";
             this.emptyOrders.Size = new System.Drawing.Size(198, 21);
+            this.emptyOrders.Sorted = true;
             this.emptyOrders.TabIndex = 11;
             this.emptyOrders.SelectedIndexChanged += new System.EventHandler(this.emptyOrders_SelectedIndexChanged);
             // 
@@ -167,7 +170,7 @@ namespace SWProject
             // prevBtn
             // 
             this.prevBtn.Location = new System.Drawing.Point(21, 10);
-            this.prevBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.prevBtn.Margin = new System.Windows.Forms.Padding(2);
             this.prevBtn.Name = "prevBtn";
             this.prevBtn.Size = new System.Drawing.Size(25, 24);
             this.prevBtn.TabIndex = 13;
