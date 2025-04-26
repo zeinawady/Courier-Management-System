@@ -197,10 +197,8 @@ namespace SWProject
                 courierName.Text = "";
                 courierPhone.Text = "";
                 assignedOrders.Items.Clear();
-                MessageBox.Show("Courier is Deleted Successfully!!");                
+                MessageBox.Show("Courier is Deleted Successfully!!");
             }
-
-
         }
     }
 }

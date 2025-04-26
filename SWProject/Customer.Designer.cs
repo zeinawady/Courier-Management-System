@@ -99,6 +99,7 @@ namespace SWProject
             this.editBtn.TabIndex = 5;
             this.editBtn.Text = "Edit";
             this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // deleteBtn
             // 

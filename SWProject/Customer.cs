@@ -23,6 +23,31 @@ namespace SWProject
 
         private void button3_Click(object sender, EventArgs e)
         {
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "delete from orders where orderID = :ordID";
+            cmd.Parameters.Add("ordID", orders.SelectedItem);
+
+            if (orderStatus.Text == "Placed")
+            {
+                int r = cmd.ExecuteNonQuery();
+                if (r != -1)
+                {
+                    orders.Items.RemoveAt(orders.SelectedIndex);
+                    orderWeight.Text = "";
+                    deliveryAddress.Text = "";
+                    orderDate.Text = "";
+                    orderStatus.Text = "";
+                    MessageBox.Show("Your Order is Deleted Successfully!!");
+                }
+            }
+            else
+            {
+                string statusVal = orderStatus.Text;
+                orders_SelectedIndexChanged(sender, e);
+                MessageBox.Show($"Failed to Delete!!\nYour order is already {statusVal}!!");
+            }
 
         }
 
@@ -108,7 +133,7 @@ namespace SWProject
             cmd2.Connection = conn;
             cmd2.CommandType = CommandType.Text;
             cmd2.CommandText = @"insert into orders 
-                             values (:ordID, :custID, NULL, :weight, :address, 'placed', Null, Null
+                             values (:ordID, :custID, NULL, :weight, :address, 'Placed', SYSDATE, Null
                               )";
             if (string.IsNullOrWhiteSpace(customerID.Text) ||
                 string.IsNullOrWhiteSpace(orderWeight.Text) ||
@@ -135,6 +160,34 @@ namespace SWProject
 
                 MessageBox.Show("Your Order is Placed Successfully!!");
             }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = @"update orders
+                    set orderWeight = :weight, deliveryAddress = :address
+                    where orderID= :ordID";
+            cmd.Parameters.Add("weight", orderWeight.Text);
+            cmd.Parameters.Add("address", deliveryAddress.Text);
+            cmd.Parameters.Add("ordID", orders.SelectedItem.ToString());
+            if(orderStatus.Text == "Placed")
+            {
+                int r = cmd.ExecuteNonQuery();
+                if(r != -1 )
+                {
+                    MessageBox.Show("Your Order is Edited Successfully!!");
+                }
+            }
+            else
+            {
+                string statusVal = orderStatus.Text;
+                orders_SelectedIndexChanged(sender, e);
+                MessageBox.Show($"Failed to Edit!!\nYour order is already {statusVal}!!");
+            }
+
         }
     }
 }
