@@ -284,5 +284,10 @@ namespace SWProject
         {
             customerID.Focus();
         }
+
+        private void customerID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
