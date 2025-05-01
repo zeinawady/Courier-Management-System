@@ -29,10 +29,10 @@ namespace SWProject
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ordersTable = new System.Windows.Forms.DataGridView();
             this.orderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliveryAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,40 +58,40 @@ namespace SWProject
             // 
             this.ordersTable.AllowUserToAddRows = false;
             this.ordersTable.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tajawal ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
-            this.ordersTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            this.ordersTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ordersTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(213)))), ((int)(((byte)(225)))));
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tajawal ExtraBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ordersTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ordersTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ordersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderID,
             this.deliveryAddress,
             this.orderWeight,
             this.status});
-            this.ordersTable.Location = new System.Drawing.Point(53, 9);
-            this.ordersTable.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.ordersTable.Location = new System.Drawing.Point(26, 5);
+            this.ordersTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ordersTable.Name = "ordersTable";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Tajawal", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ordersTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ordersTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ordersTable.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Tajawal", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
-            this.ordersTable.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.ordersTable.Size = new System.Drawing.Size(1726, 482);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            this.ordersTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.ordersTable.Size = new System.Drawing.Size(863, 249);
             this.ordersTable.TabIndex = 0;
             // 
             // orderID
@@ -127,23 +127,23 @@ namespace SWProject
             // 
             // courierID
             // 
-            this.courierID.Font = new System.Drawing.Font("Tajawal ExtraBold", 9.900001F, System.Drawing.FontStyle.Bold);
-            this.courierID.Location = new System.Drawing.Point(449, 19);
-            this.courierID.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.courierID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold);
+            this.courierID.Location = new System.Drawing.Point(224, 10);
+            this.courierID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.courierID.Name = "courierID";
-            this.courierID.Size = new System.Drawing.Size(357, 56);
+            this.courierID.Size = new System.Drawing.Size(271, 26);
             this.courierID.TabIndex = 1;
             this.courierID.TextChanged += new System.EventHandler(this.courierID_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tajawal ExtraBold", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.label1.Location = new System.Drawing.Point(8, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label1.Location = new System.Drawing.Point(4, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(372, 80);
+            this.label1.Size = new System.Drawing.Size(200, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter Your ID:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -151,12 +151,12 @@ namespace SWProject
             // viewBtn
             // 
             this.viewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(89)))), ((int)(((byte)(5)))));
-            this.viewBtn.Font = new System.Drawing.Font("Tajawal ExtraBold", 10F, System.Drawing.FontStyle.Bold);
+            this.viewBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.viewBtn.ForeColor = System.Drawing.Color.White;
-            this.viewBtn.Location = new System.Drawing.Point(935, 10);
-            this.viewBtn.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.viewBtn.Location = new System.Drawing.Point(684, 7);
+            this.viewBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.viewBtn.Name = "viewBtn";
-            this.viewBtn.Size = new System.Drawing.Size(350, 72);
+            this.viewBtn.Size = new System.Drawing.Size(175, 37);
             this.viewBtn.TabIndex = 3;
             this.viewBtn.Text = "View Orders";
             this.viewBtn.UseVisualStyleBackColor = false;
@@ -165,12 +165,12 @@ namespace SWProject
             // updateBtn
             // 
             this.updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
-            this.updateBtn.Font = new System.Drawing.Font("Tajawal ExtraBold", 10F, System.Drawing.FontStyle.Bold);
+            this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.updateBtn.ForeColor = System.Drawing.Color.White;
-            this.updateBtn.Location = new System.Drawing.Point(1437, 506);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.updateBtn.Location = new System.Drawing.Point(718, 261);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(342, 101);
+            this.updateBtn.Size = new System.Drawing.Size(171, 52);
             this.updateBtn.TabIndex = 4;
             this.updateBtn.Text = "Save Changes";
             this.updateBtn.UseVisualStyleBackColor = false;
@@ -180,10 +180,9 @@ namespace SWProject
             // 
             this.prevBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
             this.prevBtn.ForeColor = System.Drawing.Color.White;
-            this.prevBtn.Location = new System.Drawing.Point(3, 12);
-            this.prevBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.prevBtn.Location = new System.Drawing.Point(2, 6);
             this.prevBtn.Name = "prevBtn";
-            this.prevBtn.Size = new System.Drawing.Size(66, 58);
+            this.prevBtn.Size = new System.Drawing.Size(33, 30);
             this.prevBtn.TabIndex = 14;
             this.prevBtn.Text = "<";
             this.prevBtn.UseVisualStyleBackColor = false;
@@ -194,47 +193,51 @@ namespace SWProject
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.courierID);
             this.panel1.Controls.Add(this.viewBtn);
-            this.panel1.Location = new System.Drawing.Point(105, 125);
+            this.panel1.Location = new System.Drawing.Point(19, 65);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1332, 100);
+            this.panel1.Size = new System.Drawing.Size(863, 52);
             this.panel1.TabIndex = 15;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.prevBtn);
-            this.panel2.Location = new System.Drawing.Point(47, 3);
+            this.panel2.Location = new System.Drawing.Point(24, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1816, 269);
+            this.panel2.Size = new System.Drawing.Size(908, 139);
             this.panel2.TabIndex = 16;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.ordersTable);
             this.panel3.Controls.Add(this.updateBtn);
-            this.panel3.Location = new System.Drawing.Point(34, 293);
+            this.panel3.Location = new System.Drawing.Point(17, 151);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1797, 615);
+            this.panel3.Size = new System.Drawing.Size(898, 317);
             this.panel3.TabIndex = 17;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.panel2);
-            this.panel4.Location = new System.Drawing.Point(12, 12);
+            this.panel4.Location = new System.Drawing.Point(6, 6);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1863, 1056);
+            this.panel4.Size = new System.Drawing.Size(932, 545);
             this.panel4.TabIndex = 18;
             // 
             // Courier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1946, 1073);
+            this.ClientSize = new System.Drawing.Size(962, 545);
             this.Controls.Add(this.panel4);
-            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Courier";
             this.Text = "Courier";
             this.Load += new System.EventHandler(this.Courier_Load);
