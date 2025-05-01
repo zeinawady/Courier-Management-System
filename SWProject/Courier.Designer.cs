@@ -47,6 +47,7 @@ namespace SWProject
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.deliveredDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ordersTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,9 +76,9 @@ namespace SWProject
             this.orderID,
             this.deliveryAddress,
             this.orderWeight,
-            this.status});
-            this.ordersTable.Location = new System.Drawing.Point(26, 5);
-            this.ordersTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.status,
+            this.deliveredDate});
+            this.ordersTable.Location = new System.Drawing.Point(20, 4);
             this.ordersTable.Name = "ordersTable";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -91,7 +92,7 @@ namespace SWProject
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
             this.ordersTable.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.ordersTable.Size = new System.Drawing.Size(863, 249);
+            this.ordersTable.Size = new System.Drawing.Size(647, 202);
             this.ordersTable.TabIndex = 0;
             // 
             // orderID
@@ -128,10 +129,9 @@ namespace SWProject
             // courierID
             // 
             this.courierID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold);
-            this.courierID.Location = new System.Drawing.Point(224, 10);
-            this.courierID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.courierID.Location = new System.Drawing.Point(168, 8);
             this.courierID.Name = "courierID";
-            this.courierID.Size = new System.Drawing.Size(271, 26);
+            this.courierID.Size = new System.Drawing.Size(204, 22);
             this.courierID.TabIndex = 1;
             this.courierID.TextChanged += new System.EventHandler(this.courierID_TextChanged);
             // 
@@ -140,10 +140,9 @@ namespace SWProject
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.label1.Location = new System.Drawing.Point(4, 5);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 31);
+            this.label1.Size = new System.Drawing.Size(165, 26);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter Your ID:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -153,10 +152,9 @@ namespace SWProject
             this.viewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(89)))), ((int)(((byte)(5)))));
             this.viewBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.viewBtn.ForeColor = System.Drawing.Color.White;
-            this.viewBtn.Location = new System.Drawing.Point(684, 7);
-            this.viewBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.viewBtn.Location = new System.Drawing.Point(513, 6);
             this.viewBtn.Name = "viewBtn";
-            this.viewBtn.Size = new System.Drawing.Size(175, 37);
+            this.viewBtn.Size = new System.Drawing.Size(131, 30);
             this.viewBtn.TabIndex = 3;
             this.viewBtn.Text = "View Orders";
             this.viewBtn.UseVisualStyleBackColor = false;
@@ -167,10 +165,9 @@ namespace SWProject
             this.updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
             this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.updateBtn.ForeColor = System.Drawing.Color.White;
-            this.updateBtn.Location = new System.Drawing.Point(718, 261);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.updateBtn.Location = new System.Drawing.Point(538, 212);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(171, 52);
+            this.updateBtn.Size = new System.Drawing.Size(128, 42);
             this.updateBtn.TabIndex = 4;
             this.updateBtn.Text = "Save Changes";
             this.updateBtn.UseVisualStyleBackColor = false;
@@ -180,9 +177,10 @@ namespace SWProject
             // 
             this.prevBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
             this.prevBtn.ForeColor = System.Drawing.Color.White;
-            this.prevBtn.Location = new System.Drawing.Point(2, 6);
+            this.prevBtn.Location = new System.Drawing.Point(2, 5);
+            this.prevBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.prevBtn.Name = "prevBtn";
-            this.prevBtn.Size = new System.Drawing.Size(33, 30);
+            this.prevBtn.Size = new System.Drawing.Size(25, 24);
             this.prevBtn.TabIndex = 14;
             this.prevBtn.Text = "<";
             this.prevBtn.UseVisualStyleBackColor = false;
@@ -193,51 +191,56 @@ namespace SWProject
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.courierID);
             this.panel1.Controls.Add(this.viewBtn);
-            this.panel1.Location = new System.Drawing.Point(19, 65);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(14, 53);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(863, 52);
+            this.panel1.Size = new System.Drawing.Size(647, 42);
             this.panel1.TabIndex = 15;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.prevBtn);
-            this.panel2.Location = new System.Drawing.Point(24, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(18, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(908, 139);
+            this.panel2.Size = new System.Drawing.Size(681, 113);
             this.panel2.TabIndex = 16;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.ordersTable);
             this.panel3.Controls.Add(this.updateBtn);
-            this.panel3.Location = new System.Drawing.Point(17, 151);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(13, 123);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(898, 317);
+            this.panel3.Size = new System.Drawing.Size(674, 258);
             this.panel3.TabIndex = 17;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel3);
             this.panel4.Controls.Add(this.panel2);
-            this.panel4.Location = new System.Drawing.Point(6, 6);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Location = new System.Drawing.Point(4, 5);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(932, 545);
+            this.panel4.Size = new System.Drawing.Size(699, 443);
             this.panel4.TabIndex = 18;
+            // 
+            // deliveredDate
+            // 
+            this.deliveredDate.HeaderText = "Delivered Date";
+            this.deliveredDate.Name = "deliveredDate";
+            this.deliveredDate.Visible = false;
             // 
             // Courier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(962, 545);
+            this.ClientSize = new System.Drawing.Size(722, 443);
             this.Controls.Add(this.panel4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Courier";
             this.Text = "Courier";
             this.Load += new System.EventHandler(this.Courier_Load);
@@ -267,5 +270,6 @@ namespace SWProject
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deliveredDate;
     }
 }

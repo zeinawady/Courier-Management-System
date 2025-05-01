@@ -50,10 +50,9 @@ namespace SWProject
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(58)))), ((int)(((byte)(138)))));
-            this.label1.Location = new System.Drawing.Point(32, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(24, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(757, 42);
+            this.label1.Size = new System.Drawing.Size(607, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome To Courier Management System";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -64,10 +63,9 @@ namespace SWProject
             this.adminBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.adminBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.adminBtn.ForeColor = System.Drawing.Color.White;
-            this.adminBtn.Location = new System.Drawing.Point(58, 34);
-            this.adminBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.adminBtn.Location = new System.Drawing.Point(44, 28);
             this.adminBtn.Name = "adminBtn";
-            this.adminBtn.Size = new System.Drawing.Size(185, 65);
+            this.adminBtn.Size = new System.Drawing.Size(139, 53);
             this.adminBtn.TabIndex = 1;
             this.adminBtn.Text = "Admin";
             this.adminBtn.UseVisualStyleBackColor = false;
@@ -79,10 +77,9 @@ namespace SWProject
             this.courierBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.courierBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.courierBtn.ForeColor = System.Drawing.Color.White;
-            this.courierBtn.Location = new System.Drawing.Point(282, 34);
-            this.courierBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.courierBtn.Location = new System.Drawing.Point(212, 28);
             this.courierBtn.Name = "courierBtn";
-            this.courierBtn.Size = new System.Drawing.Size(185, 65);
+            this.courierBtn.Size = new System.Drawing.Size(139, 53);
             this.courierBtn.TabIndex = 2;
             this.courierBtn.Text = "Courier";
             this.courierBtn.UseVisualStyleBackColor = false;
@@ -94,10 +91,9 @@ namespace SWProject
             this.customerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.customerBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.customerBtn.ForeColor = System.Drawing.Color.White;
-            this.customerBtn.Location = new System.Drawing.Point(502, 34);
-            this.customerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.customerBtn.Location = new System.Drawing.Point(376, 28);
             this.customerBtn.Name = "customerBtn";
-            this.customerBtn.Size = new System.Drawing.Size(185, 65);
+            this.customerBtn.Size = new System.Drawing.Size(139, 53);
             this.customerBtn.TabIndex = 3;
             this.customerBtn.Text = "Customer";
             this.customerBtn.UseVisualStyleBackColor = false;
@@ -109,10 +105,9 @@ namespace SWProject
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(120, 25);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(90, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(246, 49);
+            this.button1.Size = new System.Drawing.Size(184, 40);
             this.button1.TabIndex = 4;
             this.button1.Text = "Generate Report 1\r\n";
             this.button1.UseVisualStyleBackColor = false;
@@ -124,10 +119,9 @@ namespace SWProject
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(394, 25);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(296, 20);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(246, 49);
+            this.button2.Size = new System.Drawing.Size(184, 40);
             this.button2.TabIndex = 5;
             this.button2.Text = "Generate Report 2";
             this.button2.UseVisualStyleBackColor = false;
@@ -138,20 +132,20 @@ namespace SWProject
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(8, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(824, 590);
+            this.panel1.Size = new System.Drawing.Size(694, 426);
             this.panel1.TabIndex = 6;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button1);
-            this.panel4.Location = new System.Drawing.Point(32, 349);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Location = new System.Drawing.Point(70, 297);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(769, 93);
+            this.panel4.Size = new System.Drawing.Size(577, 76);
             this.panel4.TabIndex = 8;
             // 
             // panel3
@@ -159,30 +153,29 @@ namespace SWProject
             this.panel3.Controls.Add(this.customerBtn);
             this.panel3.Controls.Add(this.courierBtn);
             this.panel3.Controls.Add(this.adminBtn);
-            this.panel3.Location = new System.Drawing.Point(29, 213);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(68, 186);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(772, 121);
+            this.panel3.Size = new System.Drawing.Size(579, 98);
             this.panel3.TabIndex = 7;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(22, 19);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(16, 15);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(787, 126);
+            this.panel2.Size = new System.Drawing.Size(659, 102);
             this.panel2.TabIndex = 6;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(840, 545);
+            this.ClientSize = new System.Drawing.Size(710, 443);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.MainForm_Load);

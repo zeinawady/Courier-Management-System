@@ -141,7 +141,16 @@ namespace SWProject
                 orderWeight.Text = dr["orderWeight"].ToString();
                 deliveryAddress.Text = dr["deliveryAddress"].ToString();
                 orderDate.Text = dr["orderDate"].ToString();
-                deliveredDate.Text = dr["deliveredDate"].ToString();
+                string delDate = dr["deliveredDate"].ToString();
+                if (delDate == "" || delDate == null)
+                {
+                   // MessageBox.Show("date = " + delDate);
+                    //deliveredDate.Text = "Not Delivered";
+                }
+                else
+                {
+                    deliveredDate.Text = delDate;
+                }
                 orderStatus.Text = dr["status"].ToString();
             }
             else
@@ -226,13 +235,13 @@ namespace SWProject
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            OracleCommand checkCmd = new OracleCommand();
-            checkCmd.Connection = conn;
-            checkCmd.CommandText = "select count(*) from Customers where userID = :id";
-            checkCmd.CommandType = CommandType.Text;
-            checkCmd.Parameters.Add("id", customerID.Text);
+            OracleCommand checkID = new OracleCommand();
+            checkID.Connection = conn;
+            checkID.CommandText = "select count(*) from Customers where userID = :id";
+            checkID.CommandType = CommandType.Text;
+            checkID.Parameters.Add("id", customerID.Text);
 
-            int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+            int count = Convert.ToInt32(checkID.ExecuteScalar());
 
             if (count == 0)
             {
@@ -286,6 +295,11 @@ namespace SWProject
         }
 
         private void customerID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }

@@ -23,7 +23,7 @@ namespace SWProject
         private void viewBtn_Click(object sender, EventArgs e)
         {
             string ordb = "User Id=scott;Password=tiger;Data Source=orcl";
-            string cmd = @"select orderID, deliveryAddress, orderWeight, status
+            string cmd = @"select orderID, deliveryAddress, orderWeight, status, deliveredDate
                            from orders
                            where courierID =:courierID and status != 'placed'";
             adapter = new OracleDataAdapter(cmd, ordb);
@@ -31,6 +31,21 @@ namespace SWProject
             if (!int.TryParse(id, out int courierId))
             {
                 MessageBox.Show("Please enter a valid numeric Courier ID.");
+                return;
+            }
+
+
+            string checkID = "SELECT userID FROM Couriers WHERE userID = :id";
+            OracleDataAdapter checkAdapter = new OracleDataAdapter(checkID, ordb);
+            checkAdapter.SelectCommand.Parameters.Add("id", courierId);
+            DataTable checkTable = new DataTable();
+            checkAdapter.Fill(checkTable);
+
+            if (checkTable.Rows.Count == 0)
+            {
+                MessageBox.Show("INVALID ID!!\nPlease enter a valid Courier ID.");
+                courierID.Text = "";
+                courierID.Focus();
                 return;
             }
 
@@ -51,6 +66,7 @@ namespace SWProject
             ordersTable.Columns["deliveryAddress"].DataPropertyName = "deliveryAddress";
             ordersTable.Columns["orderWeight"].DataPropertyName = "orderWeight";
             ordersTable.Columns["status"].DataPropertyName = "status";
+            ordersTable.Columns["deliveredDate"].DataPropertyName = "deliveredDate";
         }
 
         private void courierID_TextChanged(object sender, EventArgs e)
@@ -60,6 +76,14 @@ namespace SWProject
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
+            foreach (DataRow row in ds.Tables[0].Rows)
+            {
+                if (row["status"].ToString() == "delivered")
+                {
+                    row["deliveredDate"] = DateTime.Now;
+                }
+            }
+
             OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
             adapter.Update(ds.Tables[0]);
             MessageBox.Show("Status is Updated Successfully!!");
